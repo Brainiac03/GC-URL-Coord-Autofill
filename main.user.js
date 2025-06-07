@@ -19,6 +19,7 @@ if (hostname === 'geocaching.com.au') {
     if (window.location.href.includes('/corrected/#')) {
         // GENERAL GCA COORECTED COORDS
         const coordsInput = document.getElementById('coords');
+        const submitBtn = document.querySelectorAll('input[type="submit"]');
 
         const urlParams = new URLSearchParams(window.location.hash.slice(1));
         const coords = urlParams.get('coords') || '';
@@ -26,7 +27,8 @@ if (hostname === 'geocaching.com.au') {
         coordsInput.value = coords;
 
         // highlight input field
-        coordsInput.style.border = "2px solid green";
+        const actualSubmit = submitBtn[1];
+        actualSubmit.style.border = "2px solid green";
 
     }
     if (window.location.href.includes('/mmmm2025/claims/#')){
