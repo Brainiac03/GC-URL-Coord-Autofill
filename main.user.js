@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GC URL Coord Autofill
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  efficiency for effectiveness' sake
 // @author       Brian
 // @match        https://www.geocaching.com/geocache/*
@@ -73,6 +73,8 @@ if (hostname === 'geocaching.com.au') {
 
             let submitBtn = document.getElementsByClassName("btn-cc-parse")[0];
             submitBtn.click();
+            let colSubmitBtn = document.getElementsByClassName("btn-cc-accept")[0];
+            colSubmitBtn.style.border = "3px solid green";
         } else {
             setTimeout(pollDOM, 300); // try again in 300 milliseconds
         }
